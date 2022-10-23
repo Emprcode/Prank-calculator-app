@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Button = () => {
+export const Button = ({lable, cls, handleOnClick}) => {
+    // cont cls = "btn-ac"
+    // const label = "AC"
   return (
-    <div  class="btn btn-ac">AC</div>
+    <div  className={"btn" + cls } onClick = {() => handleOnClick(lable)} >{lable} </div>
   )
 }
