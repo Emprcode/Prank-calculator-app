@@ -3,14 +3,24 @@ import './App.css';
 import { Display } from './components/Display';
 import { BtnArea } from './components/BtnArea';
 import { useState } from 'react';
+import abc from './components/abc.wav';
 const operators = ["%", "/", "*", "-", "+"];
 
 const App = () => {
   const [str, setStr] = useState("");
   const [lastOperator, setlastOperator] = useState("");
+  const [isPrank, setIsPrank] = useState(false);
+  const audio = new Audio(abc);
+
+  const extraValue = () => {
+    const num = Math.round(Math.random() * 10)
+    return num > 10 ? 0 : num;
+  }
 
   const handleOnClick =(val) => {
       console.log(val);
+
+      isPrank && setIsPrank(false);
 
       if(val === "AC"){
         setStr('')
@@ -29,11 +39,20 @@ const App = () => {
       if (operators.includes(lastChar)){
          strToDisplay = str.slice(0,-1);
       }
-      setStr(eval(strToDisplay). toString());
+
+      const extra = extraValue();
+
+      extra && setIsPrank(true);
+      extra && audio.play();
+      const ttl = eval(strToDisplay) + extra;
+
+     
+      setStr(ttl. toString());
       return;
 
   }
 
+  
   //prevent multiple operator
 
   if(operators.includes(val)){
@@ -78,7 +97,7 @@ if ( val === "."){
   return (
     <div className="wrapper">
         <div className="calculator">
-            <Display string={str}/>
+            <Display string={str} isPrank= {isPrank}/>
             <BtnArea handleOnClick={handleOnClick}/>
            
         </div>
