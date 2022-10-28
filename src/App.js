@@ -14,7 +14,7 @@ const App = () => {
 
   const extraValue = () => {
     const num = Math.round(Math.random() * 10)
-    return num > 10 ? 0 : num;
+    return num > 3 ? 0 : num;
   }
 
   const handleOnClick =(val) => {
@@ -42,8 +42,7 @@ const App = () => {
 
       const extra = extraValue();
 
-      extra && setIsPrank(true);
-      extra && audio.play();
+      extra &&  audio.play() && setIsPrank(true) ;
       const ttl = eval(strToDisplay) + extra;
 
      
