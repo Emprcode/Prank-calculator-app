@@ -152,8 +152,10 @@ grid-template-areas:
 }
 
 .prank{
-  
+
   animation: shake 0.5s;
+  background: red !important;
+  color: white;
 }
 @keyframes shake {
   0%{
@@ -168,6 +170,5 @@ grid-template-areas:
   100%{
       transform: translate(-10px);
   }
-  
-}
 
+}
