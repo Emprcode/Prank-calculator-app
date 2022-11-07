@@ -10,7 +10,7 @@ body{
 }
 
 .wrapper{
-  background: #82F8BF;
+  background: #58eaa3dc;
   min-height: 100vh;
 
   display: flex;
@@ -20,7 +20,7 @@ body{
 }
 
 .calculator{
-  background: linear-gradient(270deg, rgba(8, 130, 230, 0.2), rgba(14, 231, 123, 0.2)); 
+  background: linear-gradient(270deg, rgba(5, 135, 241, 0.534), rgba(9, 225, 117, 0.406)); 
 backdrop-filter: blur(8.5px);
 /* Note: backdrop-filter has minimal browser support */
 
