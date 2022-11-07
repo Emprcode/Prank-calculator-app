@@ -114,6 +114,7 @@ grid-template-areas:
 }
 .btn-0{
   grid-area: btn0;
+  grid-row: 1 / 3;
 }
 .btn-dot{
   grid-area: dot;
